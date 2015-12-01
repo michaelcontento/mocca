@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
 default_args() {
-    local opts=''
+    local opts=""
     if [ -f .mocha.opts ]; then
         opts="${opts} --opts .mocha.opts"
     fi
     if [ -f .moccarc ]; then
         opts="${opts} --opts .moccarc"
+    fi
+
+    local reporter=""
+    if [ -n "$CI" ]; then
+        rm -rf ./test-results.xml
+        reporter="--reporter mocha-junit-reporter"
     fi
 
     echo "--bail \
@@ -18,6 +24,7 @@ default_args() {
         --require mocha-clean \
         --throw-deprecation \
         --trace-deprecation \
+        ${reporter} \
         ${opts}"
 }
 
