@@ -8,6 +8,15 @@
   "bin": {
     "mocca": "bin.sh"
   },
+  "bugs": {
+    "url": "https://github.com/michaelcontento/mocca/issues",
+    "email": "michaelcontento@gmail.com"
+  },
+  "homepage": "https://github.com/michaelcontento/mocca",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelcontento/mocca.git"
+  },
   "keywords": [
     "tap",
     "tdd",
