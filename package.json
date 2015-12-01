@@ -8,6 +8,17 @@
   "bin": {
     "mocca": "bin.sh"
   },
+  "keywords": [
+    "tap",
+    "tdd",
+    "bdd",
+    "test",
+    "mocha",
+    "chai",
+    "sinon",
+    "testing",
+    "runner"
+  ],
   "author": "Michael Contento <michaelcontento@gmail.com>",
   "license": "MIT",
   "dependencies": {
