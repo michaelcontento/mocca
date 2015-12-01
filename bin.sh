@@ -34,7 +34,7 @@ mocha() {
     if [ -x $npm2 ]; then
         $npm2 $(default_args) $@ './src/**/__tests__/*-test.js'
     elif [ -x $npm3 ]; then
-        $npm3 $(default_args) $@ './**/__tests__/*-test.js'
+        $npm3 $(default_args) $@ './src/**/__tests__/*-test.js'
     else
         echo "ERROR: Unable to locate mocha" >&2
         exit 1
