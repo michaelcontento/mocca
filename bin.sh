@@ -19,7 +19,6 @@ default_args() {
         --check-leaks \
         --compilers js:mocca/babel \
         --recursive \
-        --reporter dot \
         --require mocca/bootstrap \
         --require mocha-clean \
         --throw-deprecation \
