@@ -1,5 +1,12 @@
 # [mocca][]
 
+[![dependencies](https://david-dm.org/michaelcontento/mocca.svg)](https://david-dm.org/michaelcontento/mocca)
+[![devDependencies](https://david-dm.org/michaelcontento/mocca/dev-status.svg)](https://david-dm.org/michaelcontento/mocca#info=devDependencies)
+
+[![license](https://img.shields.io/npm/l/mocca.svg?style=flat-square)](https://www.npmjs.com/package/mocca)
+[![npm version](https://img.shields.io/npm/v/mocca.svg?style=flat-square)](https://www.npmjs.com/package/mocca)
+[![npm downloads](https://img.shields.io/npm/dm/mocca.svg?style=flat-square)](https://www.npmjs.com/package/mocca)
+
 It's quite cumbersome to install [mocha][], all awesome plugin you love and
 call it with the right arguments...
 
