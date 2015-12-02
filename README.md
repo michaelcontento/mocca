@@ -7,6 +7,8 @@
 [![npm version](https://img.shields.io/npm/v/mocca.svg?style=flat-square)](https://www.npmjs.com/package/mocca)
 [![npm downloads](https://img.shields.io/npm/dm/mocca.svg?style=flat-square)](https://www.npmjs.com/package/mocca)
 
+## Overview
+
 It's quite cumbersome to install [mocha][], all awesome plugin you love and
 call it with the right arguments...
 
