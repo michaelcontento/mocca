@@ -32,7 +32,7 @@
   "license": "MIT",
   "dependencies": {
     "chai": "^3.4.1",
-    "chai-as-promised": "^5.1.0",
+    "chai-as-promised": "^5.2.0",
     "chai-string": "^1.1.4",
     "mocha": "^2.3.4",
     "mocha-clean": "^1.0.0",
