@@ -31,14 +31,35 @@ mocha() {
     local npm2="./node_modules/mocca/node_modules/.bin/mocha"
     local npm3="./node_modules/.bin/mocha"
 
+    #  in: "arg1 --arg2 -- arg3 --arg4"
+    # out: "arg1 --arg2"
+    local pattern="$(echo "$@")"
+    pattern=${pattern#*--}
+    pattern=${pattern# }
+
+    pattern=${pattern// /,}
+    pattern="./{${pattern:-src}}/**/__tests__/*-test.js"
+
+    #  in: "arg1 --arg2 -- arg3 --arg4"
+    # out: "arg3 --arg4"
+    local args="$(echo "$@")"
+    args=${args%-- *}
+    args=${args% }
+
+    # combine args
+    local user_args="$pattern"
+    if [ "" != "$args" ]; then
+        user_args="$args $user_args"
+    fi
+
     if [ -x $npm2 ]; then
-        $npm2 $(default_args) $@ './src/**/__tests__/*-test.js'
+        $npm2 $(default_args) "$user_args"
     elif [ -x $npm3 ]; then
-        $npm3 $(default_args) $@ './src/**/__tests__/*-test.js'
+        $npm3 $(default_args) "$user_args"
     else
         echo "ERROR: Unable to locate mocha" >&2
         exit 1
     fi
 }
 
-mocha $@
+mocha "$@"
