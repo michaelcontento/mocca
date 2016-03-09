@@ -1,6 +1,6 @@
 {
   "name": "mocca",
-  "version": "1.0.0",
+  "version": "fix",
   "description": "Mocha bundled with some awesome plugins",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
