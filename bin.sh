@@ -33,26 +33,30 @@ mocha() {
 
     #  in: "arg1 --arg2 -- arg3 --arg4"
     # out: "arg1 --arg2"
-    local pattern="$(echo "$@")"
-    pattern=${pattern#*--}
-    pattern=${pattern# }
-
-    # ensure default: src
-    pattern=${pattern:-src}
-    # convert "a b" to "a,b"
-    pattern=${pattern// /,}
-    # convert "a,b" to "{a,b}" but "a" keeps as "a"
-    if [[ "$pattern" == *","* ]]; then
-        pattern="{$pattern}"
-    fi
-    # create full matching pattern
-    pattern="./${pattern}/**/__tests__/*-test.js"
-
-    #  in: "arg1 --arg2 -- arg3 --arg4"
-    # out: "arg3 --arg4"
     local args="$(echo "$@")"
     args=${args%-- *}
     args=${args% }
+
+    #  in: "arg1 --arg2 -- arg3 --arg4"
+    # out: "arg3 --arg4"
+    local pattern="$(echo "$@")"
+    if [[ "$pattern" == *" -- "* ]]; then
+        pattern=${pattern#*-- }
+        pattern=${pattern# }
+
+        # convert "a b" to "a,b"
+        pattern=${pattern// /,}
+        # convert "a,b" to "{a,b}" but "a" keeps as "a"
+        if [[ "$pattern" == *","* ]]; then
+            pattern="{$pattern}"
+        fi
+    else
+        # ensure default: src
+        pattern="src"
+    fi
+
+    # create full matching pattern
+    pattern="./${pattern}/**/__tests__/*-test.js"
 
     # combine args
     local user_args="$pattern"
