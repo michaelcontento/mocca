@@ -64,6 +64,7 @@ mocha() {
         user_args="$args $user_args"
     fi
 
+    echo mocca $(default_args) "$user_args"
     if [ -x $npm2 ]; then
         $npm2 $(default_args) "$user_args"
     elif [ -x $npm3 ]; then
