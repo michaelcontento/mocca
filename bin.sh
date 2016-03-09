@@ -40,7 +40,7 @@ mocha() {
     #  in: "arg1 --arg2 -- arg3 --arg4"
     # out: "arg3 --arg4"
     local pattern="$(echo "$@")"
-    if [[ "$pattern" == *" -- "* ]]; then
+    if [[ "$pattern" == *"-- "* ]]; then
         pattern=${pattern#*-- }
         pattern=${pattern# }
 
