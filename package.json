@@ -36,7 +36,7 @@
     "chai-string": "^1.1.6",
     "mocha": "^2.3.4",
     "mocha-clean": "^1.0.0",
-    "mocha-junit-reporter": "^1.9.1",
+    "mocha-junit-reporter": "^1.11.0",
     "sinon": "^1.17.2",
     "sinon-as-promised": "^4.0.0",
     "sinon-chai": "^2.8.0"
