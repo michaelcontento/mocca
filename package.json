@@ -31,7 +31,7 @@
   "author": "Michael Contento <michaelcontento@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "chai": "^3.4.1",
+    "chai": "^3.5.0",
     "chai-as-promised": "^5.1.0",
     "chai-string": "^1.1.6",
     "mocha": "^2.3.4",
